@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            function sayMyName(){
+                console.log("Prakhar");
+            }
+
+            sayMyName();
+
+            function counting(){
+                for(let i=1; i<=10; i++){
+                    console.log(i);
+                }
+            }
+            counting();
+
+            function printNum(num){
+                console.log('Printing Number:',num);
+            }
+
+            printNum(5);
+
+            function sum(a,b,c){
+                let sum = a+b+c;
+                return sum;
+            }
+
+            console.log(sum(1,2,3));
+
+            let square = function(number){
+                return number**2;
+            }
+
+            console.log(square(2));
+
+            let getExp = (x,y) => {
+                return x**y;
+            }
+
+            console.log(getExp(2,3));
+        </script>
+    </body>
+</html>

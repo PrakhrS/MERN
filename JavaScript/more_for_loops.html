@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //For-each
+        let arr = [10,20, 30];
+
+        arr.forEach((value,index)=>{
+            console.log("Number:", value, "Index:", index);
+        })
+
+        //For-in
+        let obj = {
+            name:'Prakhar',
+            age: 25,
+            height: "5ft 10in"
+        };
+        for(let key in obj){
+            console.log(key,obj[key]);
+        }
+
+        //For-of
+        let ar = [10,20,30,40];
+
+        for(let value of ar){
+            console.log(value);
+        }
+    </script>
+</body>
+</html>

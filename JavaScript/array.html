@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+    let arr= [1,2,3,4,5];
+    console.log(arr);
+    console.log(typeof arr);
+
+
+    // Constructor Method
+
+        let brr = new Array('Prakhar', 1, true);
+        console.log(brr);
+
+        console.log(brr[2]);
+
+    //Built in Methods    
+
+        //push
+            brr.push('Soni');
+            console.log(brr);
+
+        //pull
+            brr.pop();
+            console.log(brr);
+
+        //shift/unshift
+            brr.shift();
+            brr.unshift('Prakhar Soni');
+            console.log(brr);
+
+        //slice
+            brr.push(20);
+            brr.push(30);
+            brr.push(40);
+            console.log(brr.slice(3,6));
+
+        //splice
+            console.log(brr);
+            brr.splice(1, 2, 'kunal');
+            console.log(brr);
+
+        //map
+            let ar = [10, 20, 30];
+            // let ans = ar.map((number)=>{
+            //     return number**2;  
+            // })
+            // console.log(ans);
+
+            ar.map((number)=>{
+                console.log(number+1);
+            })
+
+        //filter
+
+            let a1= [10, 20 ,11, 22, 24, 30];
+
+            let answer = a1.filter((num) =>{
+                if(num%10 == 0){
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            });
+
+            console.log(answer);
+
+        //reduce
+
+            let aq = [10,20,30,40];
+
+            let p = aq.reduce((acc,curr)=>{
+                return acc+curr;
+            }, 0);
+
+            console.log(p);
+
+        //sort
+
+            a1.sort();
+            console.log(a1);
+
+
+    //array in function
+
+        let a = [10,20,30,40];
+
+        function getSum(a){
+            let len = a.length;
+            let sum =0;
+            for(let index=0; index<len; index++){
+                sum = sum + a[index];
+            }
+            return sum;
+        }
+
+        let total = getSum(a);
+        console.log(total);
+        
+
+    
+
+
+
+    </script>
+</body>
+</html>

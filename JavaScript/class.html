@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Human {
+
+            //properties
+            age=13; //public
+            #wt=80; //private
+            ht=180;
+            gender;
+
+
+            //constructor
+            constructor(newGender){
+                this.gender = newGender;
+            }
+
+
+
+            //behavior
+            walking(){
+                console.log("I am walking", this.#wt);
+            }
+
+            running(){
+                console.log("I am running");
+            }
+
+            get fetchWeight(){
+                return this.#wt;
+            }
+
+            set modifyWeight(val){
+                this.#wt = val;
+            }
+        }
+
+        let obj = new Human("M");
+        console.log(obj.age);
+        // console.log(obj.#wt);   //Error
+
+        obj.walking();
+
+        console.log(obj.fetchWeight);
+        obj.modifyWeight= 100;
+        console.log(obj.fetchWeight);
+
+        console.log(obj.gender);
+
+
+        //default parameter
+
+        // function sayName(myName= 'Default'){
+        //     console.log("My Name is ", myName);
+        // }
+
+        // sayName();
+
+        function sayName(myName= 'Default', lastName = myName.toUpperCase()){
+            console.log("My Name is ", myName, " ", lastName);
+        }
+
+        sayName();
+
+        // function solve(value = {age:15, wt:90, ht:190}){
+        //     console.log("Hello",value);
+        // }
+
+        // solve();
+
+        function solve(value = {age:15, wt:90, ht:190}){
+            console.log("Hello",value);
+        }
+
+        solve(undefined);
+
+
+        function getAge(){
+            return 190;
+        }
+
+        function utility(name= "Prakhar", age=getAge()){
+            console.log(name, " ", age);
+        }
+
+        utility();
+
+    </script>
+</body>
+</html>

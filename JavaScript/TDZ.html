@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Global Scope
+            var age = 15;
+
+            console.log(age);
+
+            {
+                console.log(age);
+            }
+
+
+        //Function Scope
+            function sayHello(){
+                var fname = "Earth";
+                console.log("Hello World", fname);
+            }
+
+            // console.log(fname); //Error
+            sayHello();
+
+        //Variable Scope
+
+            {
+                var age0 = 100;
+            }
+
+            console.log(age0);
+
+            {
+                let age1 = 43;
+            }
+            console.log(age1);   //Error
+
+        //TDZ(Temporal Dead Zone)
+            console.log(marks);
+            let marks=100;
+
+    </script>
+</body>
+</html>

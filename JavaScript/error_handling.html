@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <script>
+        //compile time error
+
+            // console.log(1;   //syntax error
+
+        //run time error
+            // console.log(x);  // x not defined
+
+
+        // Handling
+
+            try {
+
+                console.log("try block starts here");
+                console.log(x);
+                console.log("try block ends here");
+            }
+            catch(e){
+
+                console.log("I am inside catch block");
+                console.log(e);
+                throw new Error("Declare variable first");
+                
+            }
+            finally {
+                console.log("Hello");
+            }
+     </script> 
+</body>
+</html>

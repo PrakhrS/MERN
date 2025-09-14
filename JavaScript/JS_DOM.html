@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #fpara{
+            color:green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <p id="fpara" class="Text">First Paragraph</p>
+    <p id="fpara" class="Text">Second Paragraph</p>
+    <p id="fpara" class="Text">Third Paragraph</p>
+    <div class="div">
+        <p id="fpara" class="Text">Second Paragraph</p>
+        <p id="fpara" class="Text">Third Paragraph</p>
+    </div>
+    <h1 id="fheading" class="Text">First Heading</h1>
+
+
+    <script>
+
+        //Accessing
+
+            document;     //fetches entire document
+            document.getElementById('fpara');    //Single
+            document.getElementsByClassName('Text');  //Multiple
+            document.getElementsByTagName('p');   //Multiple
+
+
+            document.querySelector('#fpara');  //Single
+            document.querySelectorAll('#fpara');  //Multiple
+
+        
+        //Updating
+
+            let para = document.querySelector('#fpara');
+            console.log(para.innerHTML);     //Prints content of that selector
+            para.innerHTML = '<h1>Hello</h1>'; 
+
+
+            let para1 = document.querySelector("#fpara");
+            console.log(para1.outerHTML);  //Prints the full HTMl (<p id="fpara" class="Text">Hello</p>)
+            para1.outerHTML = '<p>Hello ji</p>';
+
+
+            let nas = document.querySelector('.div');
+            console.log(nas.textContent);   // Prints content with spacing exaclty as in code editor
+
+            let nas1 = document.querySelector('.div');
+            console.log(nas.innerText);    // Prints content with spacing as in browser
+
+
+        //Inserting
+
+            let newPara = document.createElement('p');
+            newPara.textContent = 'NewParagraph';
+            document.body.appendChild(newPara);   //append at the last
+
+
+            //for specific position
+            let mydiv = document.querySelector('.div');
+            let newele = document.createElement('span');
+            newele.textContent = 'Prakhar';
+            mydiv.insertAdjacentElement("beforebegin" , newele );
+
+
+        //Deleting
+            newele.remove();
+
+    </script> 
+
+
+</body>
+</html>

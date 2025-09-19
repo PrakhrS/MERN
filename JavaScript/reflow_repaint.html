@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //Code 1 (100reflow 100repaint)
+        const t1 = performance.now();
+        for(let i=0; i<=100; i++){
+            let para = document.createElement('p');
+            para.textContent = "This is para" + i;
+            document.body.appendChild(para);
+        }
+        const t2= performance.now();
+
+        console.log("total time= "+ (t2-t1));
+
+
+        //Code 2 (1 reflow 1repaint)
+        const t3 = performance.now();
+        let mydiv = document.createElement('div');
+        for(let i=0; i<=100; i++){
+            let para = document.createElement('p');
+            para.textContent = "This is para" + i;
+            mydiv.appendChild(para);
+        }
+        document.body.appendChild(mydiv);
+
+        const t4= performance.now();
+
+        console.log("total time= "+ (t4-t3));
+
+
+        //best code
+        let fragment = document.createDocumentFragment();
+
+        for(let i=1; i<=100; i++){  
+            let para = document.createElement('p');
+            para.textContent = "This is para" + i;
+            fragment.appendChild(para);
+        }
+        document.body.appendChild(fragment);
+        
+    </script>
+    
+</body>
+</html>

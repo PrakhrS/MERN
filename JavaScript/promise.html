@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let firstPromise = new Promise( ( resolve, reject) => {
+        //     console.log("Prakhar");
+            // resolve(1001);
+            // reject ( new Error("Internal Server Error"));
+        // });
+
+        // function sayName(){
+        //     console.log("Prakhar ");
+
+        // }
+
+        // let firstPromise = new Promise ((resolve, reject) =>{
+        //     setTimeout(sayName, 5000);
+        //     resolve(1) ;
+        // });
+
+
+        let promise = new Promise((resolve, reject) => {
+            let success = false;
+            if(success) {
+                resolve("Promise Fulfilled");
+            }
+            else {
+                reject("Promise Rejected");
+            }
+        })
+
+        // promise.then((message)=>{
+        //     console.log("Then ka message is " + message);
+        // }).catch((error)=>{
+        //     console.log("Error " + error);
+        // })
+        
+        promise.then((message) => {
+            console.log("First msg:" + message);
+            return " Promise fulfilled second message";
+        }).then((message)=>{
+            console.log("Second msg:" + message);
+            return " Promise fulfilled third message";
+        }).then((message)=> {
+            console.log("Third msg:" + message);
+        }).catch((error) => {
+            console.error(error);
+        }).finally((message) => {
+            console.log("I will always run");
+        })
+
+
+
+        let promise1 = new Promise((resolve, reject) => {
+            setTimeout (resolve, 1000, "First");
+        })
+        let promise2 = new Promise((resolve, reject) => {
+            setTimeout (resolve, 2000, "Second");
+        })
+
+        Promise.all([promise1, promise2]).then((value) => {
+            console.log(value);
+        })
+
+    </script>
+</body>
+</html>
